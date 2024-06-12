@@ -1,0 +1,73 @@
+﻿@model bpkp_fe.Models.TrBpkb
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BPKB</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AgreementNumber, "Agreement Number", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.AgreementNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AgreementNumber, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.BranchId, "Branch Id", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.BranchId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BranchId, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.BpkbNo, "No. BPKB", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.BpkbNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BpkbNo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.BpkbDateIn, "Tanggal BPKB In", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.BpkbDateIn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BpkbDateIn, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.BpkbDate, "Tanggal BPKB", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.BpkbDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BpkbDate, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FakturNo, "No. Faktur", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.FakturNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FakturNo, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FakturDate, "Tanggal Faktur", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.FakturDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FakturDate, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PoliceNo, "Nomor Polisi", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.PoliceNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PoliceNo, "", new { @class = "text-danger" })
+            </div>
+@*             <div class="form-group">
+                @Html.LabelFor(model => model.LocationId, "Lokasi Penyimpanan", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.LocationId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LocationId, "", new { @class = "text-danger" })
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
